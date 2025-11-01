@@ -49,5 +49,19 @@ public class WorkingWithForms {
         return FullName;
     }
 
+    public JLabel prepareJLabelEmailL() {
+        if (EmailLabel == null) {
+            EmailLabel = new JLabel("Email:");
+        }
+        return EmailLabel;
+    }
+
+    public JTextField prepareJTextFieldEmailInput() {
+        if (EmailInput == null) {
+            EmailInput = new JTextField(20);
+        }
+        return EmailInput;
+    }
+
     }
 

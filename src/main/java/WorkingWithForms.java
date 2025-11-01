@@ -6,6 +6,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class WorkingWithForms {
+    //creating instances of the JComponents
+    JTextField FullName,EmailInput;
+    JPasswordField PasswordInput;
+    JComboBox Department;
+    JButton SubmitButton,ClearButton;
+    JFrame MainFrame;
+    JTree OrganizationStructure;
+    JCalendar DOB;
+    JPanel formPanel;
+    JLabel EmailLabel,FullNameLabel,DepartmentLabel,DOBLabel;
 
     public WorkingWithForms() {
     }

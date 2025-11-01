@@ -77,5 +77,26 @@ public class WorkingWithForms {
         return DepartmentLabel;
     }
 
+    public JComboBox<String> prepareJComboBoxDepartment() {
+        if (Department == null) {
+            Department = new JComboBox<>(new String[]{"HR", "Finance", "IT", "Marketing"});
+        }
+        return Department;
+    }
+
+    public JLabel prepareJLabelDOB() {
+        if (DOBLabel == null) {
+            DOBLabel = new JLabel("Date of Birth:");
+        }
+        return DOBLabel;
+    }
+
+    public JCalendar prepareJCalendarDOB() {
+        if (DOB == null) {
+            DOB = new JCalendar();
+        }
+        return DOB;
+    }
+
     }
 

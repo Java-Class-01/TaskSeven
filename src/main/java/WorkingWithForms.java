@@ -18,5 +18,15 @@ public class WorkingWithForms {
     JLabel EmailLabel,FullNameLabel,DepartmentLabel,DOBLabel;
 
     public WorkingWithForms() {
+        this.PrepareMainFrame();
+    }
+    public JFrame PrepareMainFrame(){
+        JFrame.setDefaultLookAndFeelDecorated(true);
+        MainFrame=new JFrame("Employee Registration System");
+        MainFrame.setSize(500,700);
+        MainFrame.setLayout(new GridBagLayout());
+        MainFrame.add(prepareFormPanel());
+        MainFrame.setVisible(true);
+        return MainFrame;
     }
 }

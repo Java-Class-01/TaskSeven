@@ -29,4 +29,25 @@ public class WorkingWithForms {
         MainFrame.setVisible(true);
         return MainFrame;
     }
-}
+    public JPanel prepareFormPanel() {
+
+        return formPanel;
+    }
+
+    //initializing the components
+    public JLabel prepareJLabelFullName() {
+        if (FullNameLabel == null) {
+            FullNameLabel = new JLabel("Full Name:");
+        }
+        return FullNameLabel;
+    }
+
+    public JTextField PrepareJTextFieldFullName() {
+        if (FullName == null) {
+            FullName = new JTextField(20);
+        }
+        return FullName;
+    }
+
+    }
+

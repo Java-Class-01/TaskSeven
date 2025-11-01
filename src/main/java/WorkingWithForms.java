@@ -63,5 +63,19 @@ public class WorkingWithForms {
         return EmailInput;
     }
 
+    public JPasswordField prepareJPasswordFieldPasswordInput() {
+        if (PasswordInput == null) {
+            PasswordInput = new JPasswordField(20);
+        }
+        return PasswordInput;
+    }
+
+    public JLabel prepareJLabelDepartment() {
+        if (DepartmentLabel == null) {
+            DepartmentLabel = new JLabel("Department:");
+        }
+        return DepartmentLabel;
+    }
+
     }
 

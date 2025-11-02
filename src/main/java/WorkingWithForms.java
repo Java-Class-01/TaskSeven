@@ -191,6 +191,28 @@ public class WorkingWithForms {
                 handleSubmitAction();
             }
         });
+        ClearButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                handleClearAction();
+            }
+        });
+
+        buttonPanel.add(SubmitButton);
+        buttonPanel.add(ClearButton);
+
+        return buttonPanel;
+    }
+    public void handleSubmitAction() {
+        String fullName = FullName.getText().trim();
+        String email = EmailInput.getText().trim();
+        String department = (String) Department.getSelectedItem();
+        char[] passwordChars = PasswordInput.getPassword();
+
+        if (fullName.isEmpty() || email.isEmpty() || passwordChars.length == 0) {
+            JOptionPane.showMessageDialog(MainFrame, "Please fill in all required fields!", "Validation Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
     }
 

@@ -14,7 +14,7 @@ public class WorkingWithForms {
     JFrame MainFrame;
     JTree OrganizationStructure;
     JCalendar DOB;
-    JPanel formPanel;
+    JPanel formPanel,buttonPanel;
     JLabel EmailLabel,FullNameLabel,DepartmentLabel,DOBLabel;
 
     public WorkingWithForms() {
@@ -81,7 +81,16 @@ public class WorkingWithForms {
         formPanel.add(prepareJCalendarDOB(), gbc);
         y++;
 
+
+
         return formPanel;
+    }
+    //BUTTON PANEL
+    public JPanel PrepareButtonPanel() {
+        buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10));
+        buttonPanel.add(this.PrepareSubmitButton());
+        buttonPanel.add(this.PrepareClearButton());
+        return buttonPanel;
     }
 
     //initializing the components
@@ -89,6 +98,11 @@ public class WorkingWithForms {
         if (FullNameLabel == null) {
             FullNameLabel = new JLabel("Full Name:");
         }
+        return FullNameLabel;
+    }
+    //COMPONENT CREATION METHODS
+    public JLabel PrepareFullNameLabel() {
+        FullNameLabel = new JLabel("Full Name:");
         return FullNameLabel;
     }
 

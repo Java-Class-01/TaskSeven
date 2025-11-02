@@ -172,6 +172,25 @@ public class WorkingWithForms {
 
             OrganizationStructure = new JTree(root);
         }
+        JScrollPane treeScroll = new JScrollPane(OrganizationStructure);
+        treeScroll.setPreferredSize(new Dimension(300, 150));
+        treeScroll.setBorder(BorderFactory.createTitledBorder("Organization Structure"));
+        return treeScroll;
+    }
+    public JPanel prepareButtonsPanel() {
+        buttonPanel = new JPanel();
+        buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 10));
+
+        SubmitButton = new JButton("Submit");
+        ClearButton = new JButton("Clear");
+
+        // Add action listeners
+        SubmitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                handleSubmitAction();
+            }
+        });
 
     }
 

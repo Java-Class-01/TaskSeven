@@ -213,6 +213,27 @@ public class WorkingWithForms {
             JOptionPane.showMessageDialog(MainFrame, "Please fill in all required fields!", "Validation Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        String dobStr = sdf.format(DOB.getDate());
 
+        // Summary message (mask password)
+        String summary = "Employee Registration Successful!\n\n" +
+                "Full Name: " + fullName + "\n" +
+                "Email: " + email + "\n" +
+                "Department: " + department + "\n" +
+                "Date of Birth: " + dobStr + "\n" +
+                "Password: ******";
+
+        JOptionPane.showMessageDialog(MainFrame, summary, "Registration Summary", JOptionPane.INFORMATION_MESSAGE);
     }
+
+    public void handleClearAction() {
+        FullName.setText("");
+        EmailInput.setText("");
+        PasswordInput.setText("");
+        Department.setSelectedIndex(0);
+        DOB.setDate(null);
+    }
+
+}
 

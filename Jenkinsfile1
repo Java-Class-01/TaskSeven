@@ -16,14 +16,14 @@ pipeline {
         stage('Build') {
             steps {
                 // For Maven projects
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
         }
 
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') { // Name of SonarQube server configured in Jenkins
-                    sh "mvn sonar:sonar -Dsonar.projectKey=YourProjectKey -Dsonar.host.url=${SONARQUBE_URL} -Dsonar.login=${SONARQUBE_TOKEN}"
+                    bat "mvn sonar:sonar -Dsonar.projectKey=YourProjectKey -Dsonar.host.url=${SONARQUBE_URL} -Dsonar.login=${SONARQUBE_TOKEN}"
                 }
             }
         }

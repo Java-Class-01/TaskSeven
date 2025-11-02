@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/YourRepo.git'
+                git branch: 'branch#1', url: 'https://github.com/Java-Class-01/TaskSeven.git'
             }
         }
 

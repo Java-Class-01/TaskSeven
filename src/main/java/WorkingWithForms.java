@@ -85,24 +85,12 @@ public class WorkingWithForms {
 
         return formPanel;
     }
-    //BUTTON PANEL
-    public JPanel PrepareButtonPanel() {
-        buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10));
-        buttonPanel.add(this.PrepareSubmitButton());
-        buttonPanel.add(this.PrepareClearButton());
-        return buttonPanel;
-    }
 
     //initializing the components
     public JLabel prepareJLabelFullName() {
         if (FullNameLabel == null) {
             FullNameLabel = new JLabel("Full Name:");
         }
-        return FullNameLabel;
-    }
-    //COMPONENT CREATION METHODS
-    public JLabel PrepareFullNameLabel() {
-        FullNameLabel = new JLabel("Full Name:");
         return FullNameLabel;
     }
 
@@ -161,6 +149,29 @@ public class WorkingWithForms {
         }
         return DOB;
     }
+    public JScrollPane prepareOrganizationTreePanel() {
+        if (OrganizationStructure == null) {
+            DefaultMutableTreeNode root = new DefaultMutableTreeNode("Company");
+            DefaultMutableTreeNode dept1 = new DefaultMutableTreeNode("HR");
+            dept1.add(new DefaultMutableTreeNode("Recruitment"));
+            dept1.add(new DefaultMutableTreeNode("Training"));
+            DefaultMutableTreeNode dept2 = new DefaultMutableTreeNode("IT");
+            dept2.add(new DefaultMutableTreeNode("Development"));
+            dept2.add(new DefaultMutableTreeNode("Support"));
+            DefaultMutableTreeNode dept3 = new DefaultMutableTreeNode("Finance");
+            dept3.add(new DefaultMutableTreeNode("Accounts"));
+            dept3.add(new DefaultMutableTreeNode("Payroll"));
+            DefaultMutableTreeNode dept4 = new DefaultMutableTreeNode("Marketing");
+            dept4.add(new DefaultMutableTreeNode("Advertising"));
+            dept4.add(new DefaultMutableTreeNode("Sales"));
+
+            root.add(dept1);
+            root.add(dept2);
+            root.add(dept3);
+            root.add(dept4);
+
+            OrganizationStructure = new JTree(root);
+        }
 
     }
 

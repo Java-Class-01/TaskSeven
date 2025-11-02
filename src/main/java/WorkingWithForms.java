@@ -100,6 +100,11 @@ public class WorkingWithForms {
         }
         return FullNameLabel;
     }
+    //COMPONENT CREATION METHODS
+    public JLabel PrepareFullNameLabel() {
+        FullNameLabel = new JLabel("Full Name:");
+        return FullNameLabel;
+    }
 
     public JTextField PrepareJTextFieldFullName() {
         if (FullName == null) {

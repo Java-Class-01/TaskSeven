@@ -13,3 +13,6 @@ pipeline {
     }
   }
 }
+
+
+Rename Jenkinsfile-1 to Jenkinsfile

@@ -1,9 +1,11 @@
 import com.toedter.calendar.JCalendar;
 
 import javax.swing.*;
+import javax.swing.tree.DefaultMutableTreeNode;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
 
 public class WorkingWithForms {
     //creating instances of the JComponents
@@ -79,6 +81,19 @@ public class WorkingWithForms {
         formPanel.add(prepareJLabelDOB(), gbc);
         gbc.gridx = 1;
         formPanel.add(prepareJCalendarDOB(), gbc);
+        y++;
+
+        // Optional: Organization Tree
+        gbc.gridx = 0; gbc.gridy = y;
+        gbc.gridwidth = 2;
+        formPanel.add(prepareOrganizationTreePanel(), gbc);
+        y++;
+
+        // Buttons (Submit + Clear)
+        gbc.gridx = 0; gbc.gridy = y;
+        gbc.gridwidth = 2;
+        gbc.anchor = GridBagConstraints.CENTER;
+        formPanel.add(prepareButtonsPanel(), gbc);
         y++;
 
 

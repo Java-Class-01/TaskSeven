@@ -241,12 +241,15 @@ public class WorkingWithForms {
         EmailInput.setText("");
         PasswordInput.setText("");
         Department.setSelectedIndex(0);
-        // JCalendar doesn't accept null dates, so set to today's date as a reset
-        try {
-            DOB.setDate(null);
-        } catch (NullPointerException e) {
-            // If null is not allowed, set to current date instead
-            DOB.setDate(new java.util.Date());
+        // Only clear DOB if it's initialized
+        if (DOB != null) {
+            // JCalendar doesn't accept null dates, so set to today's date as a reset
+            try {
+                DOB.setDate(null);
+            } catch (NullPointerException e) {
+                // If null is not allowed, set to current date instead
+                DOB.setDate(new java.util.Date());
+            }
         }
     }
 

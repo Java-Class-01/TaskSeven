@@ -125,11 +125,18 @@ public class WorkingWithFormsTest {
     @Test
     @DisplayName("Test Clear Action")
     void testHandleClearAction() {
+        // Initialize components first
+        workingWithForms.PrepareJTextFieldFullName();
+        workingWithForms.prepareJTextFieldEmailInput();
+        workingWithForms.prepareJPasswordFieldPasswordInput();
+        workingWithForms.prepareJComboBoxDepartment();
+        workingWithForms.prepareJCalendarDOB(); // Ensure DOB is initialized
+        
         // Set some values
-        workingWithForms.PrepareJTextFieldFullName().setText("John Doe");
-        workingWithForms.prepareJTextFieldEmailInput().setText("john@example.com");
-        workingWithForms.prepareJPasswordFieldPasswordInput().setText("password123");
-        workingWithForms.prepareJComboBoxDepartment().setSelectedIndex(2);
+        workingWithForms.FullName.setText("John Doe");
+        workingWithForms.EmailInput.setText("john@example.com");
+        workingWithForms.PasswordInput.setText("password123");
+        workingWithForms.Department.setSelectedIndex(2);
         
         // Execute clear action
         workingWithForms.handleClearAction();

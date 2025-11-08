@@ -1,9 +1,11 @@
 import com.toedter.calendar.JCalendar;
 
 import javax.swing.*;
+import javax.swing.tree.DefaultMutableTreeNode;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
 
 public class WorkingWithForms {
     //creating instances of the JComponents
@@ -232,7 +234,13 @@ public class WorkingWithForms {
         EmailInput.setText("");
         PasswordInput.setText("");
         Department.setSelectedIndex(0);
-        DOB.setDate(null);
+        // JCalendar doesn't accept null dates, so set to today's date as a reset
+        try {
+            DOB.setDate(null);
+        } catch (NullPointerException e) {
+            // If null is not allowed, set to current date instead
+            DOB.setDate(new java.util.Date());
+        }
     }
 
 }

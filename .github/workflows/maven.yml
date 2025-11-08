@@ -24,7 +24,10 @@ jobs:
           distribution: 'temurin'
 
       - name: Build with Maven
-        run: mvn -B clean compile test --file pom.xml -Djava.awt.headless=true
+        run: mvn -B clean compile --file pom.xml -Djava.awt.headless=true
+        
+      - name: Run Tests
+        run: mvn -B test --file pom.xml -Djava.awt.headless=true
 
       - name: Run SonarQube Analysis
         continue-on-error: true
@@ -47,10 +50,10 @@ jobs:
         if: always()
         run: |
           if [ "${{ steps.sonar.outcome }}" == "failure" ]; then
-            echo "⚠️ SonarQube analysis completed but Elasticsearch indexing failed"
+            echo "SonarQube analysis completed but Elasticsearch indexing failed"
             echo "This is a known server-side issue with Elasticsearch indexing"
             echo "The analysis data was uploaded successfully - check SonarQube dashboard"
             echo "Workflow will continue - this is not a blocking error"
           else
-            echo "✅ SonarQube analysis completed successfully"
+            echo "SonarQube analysis completed successfully"
           fi

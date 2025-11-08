@@ -20,9 +20,16 @@ public class WorkingWithForms {
     JLabel EmailLabel,FullNameLabel,DepartmentLabel,DOBLabel;
 
     public WorkingWithForms() {
-        this.PrepareMainFrame();
+        // Only create frame if not in headless mode
+        if (!java.awt.GraphicsEnvironment.isHeadless()) {
+            this.PrepareMainFrame();
+        }
     }
     public JFrame PrepareMainFrame(){
+        // Skip frame creation in headless mode
+        if (java.awt.GraphicsEnvironment.isHeadless()) {
+            return null;
+        }
         JFrame.setDefaultLookAndFeelDecorated(true);
         MainFrame=new JFrame("Employee Registration System");
         MainFrame.setSize(500,700);

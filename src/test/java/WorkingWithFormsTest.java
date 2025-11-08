@@ -31,7 +31,7 @@ public class WorkingWithFormsTest {
     @Test
     @DisplayName("Test Full Name TextField Creation")
     void testPrepareJTextFieldFullName() {
-        JTextField textField = workingWithForms.PrepareJTextFieldFullName();
+        JTextField textField = workingWithForms.prepareJTextFieldFullName();
         assertNotNull(textField, "Full Name text field should not be null");
         assertEquals(20, textField.getColumns(), "Text field should have 20 columns");
     }
@@ -126,7 +126,7 @@ public class WorkingWithFormsTest {
     @DisplayName("Test Clear Action")
     void testHandleClearAction() {
         // Initialize components first
-        workingWithForms.PrepareJTextFieldFullName();
+        workingWithForms.prepareJTextFieldFullName();
         workingWithForms.prepareJTextFieldEmailInput();
         workingWithForms.prepareJPasswordFieldPasswordInput();
         workingWithForms.prepareJComboBoxDepartment();
@@ -152,10 +152,10 @@ public class WorkingWithFormsTest {
     @DisplayName("Test Main Frame Creation")
     void testPrepareMainFrame() {
         WorkingWithForms newForm = new WorkingWithForms();
-        // In headless mode, PrepareMainFrame may not create a visible frame
+        // In headless mode, prepareMainFrame may not create a visible frame
         // but we can still test that the method doesn't throw an exception
         try {
-            JFrame frame = newForm.PrepareMainFrame();
+            JFrame frame = newForm.prepareMainFrame();
             if (frame != null) {
                 assertNotNull(frame, "Main frame should not be null");
                 assertEquals("Employee Registration System", frame.getTitle(), "Frame title should match");

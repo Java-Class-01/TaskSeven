@@ -12,7 +12,7 @@ public class WorkingWithForms {
     //creating instances of the JComponents
     JTextField FullName,EmailInput;
     JPasswordField PasswordInput;
-    JComboBox Department;
+    JComboBox<String> Department;
     JButton SubmitButton,ClearButton;
     JFrame MainFrame;
     JTree OrganizationStructure;
@@ -23,10 +23,10 @@ public class WorkingWithForms {
     public WorkingWithForms() {
         // Only create frame if not in headless mode
         if (!java.awt.GraphicsEnvironment.isHeadless()) {
-            this.PrepareMainFrame();
+            this.prepareMainFrame();
         }
     }
-    public JFrame PrepareMainFrame(){
+    public JFrame prepareMainFrame(){
         // Skip frame creation in headless mode
         if (java.awt.GraphicsEnvironment.isHeadless()) {
             return null;
@@ -59,7 +59,7 @@ public class WorkingWithForms {
         gbc.gridx = 0; gbc.gridy = y;
         formPanel.add(prepareJLabelFullName(), gbc);
         gbc.gridx = 1;
-        formPanel.add(PrepareJTextFieldFullName(), gbc);
+        formPanel.add(prepareJTextFieldFullName(), gbc);
         y++;
 
         //the email to be the second on the list
@@ -104,7 +104,7 @@ public class WorkingWithForms {
         return FullNameLabel;
     }
 
-    public JTextField PrepareJTextFieldFullName() {
+    public JTextField prepareJTextFieldFullName() {
         if (FullName == null) {
             FullName = new JTextField(20);
         }

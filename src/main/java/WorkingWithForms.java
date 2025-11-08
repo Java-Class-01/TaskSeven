@@ -5,7 +5,8 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.SimpleDateFormat;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 
 public class WorkingWithForms {
     //creating instances of the JComponents
@@ -222,8 +223,12 @@ public class WorkingWithForms {
             JOptionPane.showMessageDialog(MainFrame, "Please fill in all required fields!", "Validation Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        String dobStr = sdf.format(DOB.getDate());
+        // Use thread-safe DateTimeFormatter instead of SimpleDateFormat
+        java.util.Date dobDate = DOB.getDate();
+        String dobStr = dobDate != null 
+            ? dobDate.toInstant().atZone(ZoneId.systemDefault())
+                .format(DateTimeFormatter.ofPattern("dd-MM-yyyy"))
+            : "";
 
         // Summary message (mask password)
         String summary = "Employee Registration Successful!\n\n" +

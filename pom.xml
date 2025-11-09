@@ -46,4 +46,23 @@
         </plugins>
     </build>
 
+
+
+         <project>
+    <!-- your existing configuration -->
+    
+    <dependencies>
+        <!-- Other dependencies -->
+        
+        <!-- Add JCalendar dependency -->
+        <dependency>
+            <groupId>com.toedter</groupId>
+            <artifactId>jcalendar</artifactId>
+            <version>1.4</version>
+        </dependency>
+        
+        <!-- If you need additional dependencies, make sure they're included -->
+    </dependencies>
+</project>
+
 </project>
